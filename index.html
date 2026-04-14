@@ -52,8 +52,34 @@
 </div>
 
 <footer>
+
+<div id="cookie-banner" style="position:fixed;bottom:0;width:100%;background:#222;color:#fff;padding:15px;text-align:center;display:none;">
+    <p>
+        We use cookies to improve your experience and for affiliate tracking. 
+        By clicking "Accept", you agree to our use of cookies.
+    </p>
+    <button onclick="acceptCookies()" style="padding:8px 12px;margin:5px;background:#ff7a18;color:white;border:none;border-radius:5px;">Accept</button>
+</div>
+
+<script>
+function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+}
+
+window.onload = function() {
+    if (!localStorage.getItem("cookiesAccepted")) {
+        document.getElementById("cookie-banner").style.display = "block";
+    }
+}
+</script>
+
+<p>
+<a href="privacy.html" style="color:white;">Privacy Policy</a>
+</p>
+
 <p class="small">Affiliate disclosure: this site contains affiliate links.</p>
-</footer>
+<p>© 2026 Freelance Setup Hub</p>
 
 </body>
 </html>
